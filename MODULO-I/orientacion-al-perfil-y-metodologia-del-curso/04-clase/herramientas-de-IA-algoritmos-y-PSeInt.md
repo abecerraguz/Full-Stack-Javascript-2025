@@ -1,12 +1,14 @@
 # Herramientas de IA, algoritmos y PSeInt  
-_M1: Orientación al perfil y metodología del curso – AE4_
+_M1: Orientacion al perfil y metodologia del curso – AE4_
 
-Esta guía está pensada para que la uses como **material de consulta** durante el módulo.  
-No es necesario que sepas programar: la idea es acompañarte paso a paso desde **cero lógica** hasta tus **primeros algoritmos** en PSeInt, y mostrarte cómo la **inteligencia artificial (IA)** puede ayudarte en el proceso.
+![Herramientas de IA, algoritmos y PSeInt](./img/header_ia_algoritmos_pseint.png)
+
+Esta guia esta pensada para que la uses como **material de consulta** durante el modulo.  
+No es necesario que sepas programar: la idea es acompanarte paso a paso desde **cero logica** hasta tus **primeros algoritmos** en PSeInt, y mostrarte como la **inteligencia artificial (IA)** puede ayudarte en el proceso.
 
 ---
 
-## 1. ¿Qué es un algoritmo?
+## 1. ¿Que es un algoritmo?
 
 Un **algoritmo** es una lista de pasos ordenados que sirve para resolver un problema o realizar una tarea.
 
@@ -14,6 +16,10 @@ Un **algoritmo** es una lista de pasos ordenados que sirve para resolver un prob
   - tiene ingredientes (datos de entrada),  
   - tiene pasos (proceso),  
   - y tiene un plato final (salida).
+
+![Algoritmo como receta](./img/algoritmo_receta.png)
+
+(Un algoritmo no siempre se ve como codigo: la imagen lo muestra como comentarios porque estamos en un entorno "estilo editor", pero la idea es la misma: pasos claros y ordenados).
 
 Un algoritmo debe:
 
@@ -145,6 +151,8 @@ Algoritmo Suma_Dos_Numeros
 FinAlgoritmo
 ```
 
+![Algoritmo suma de dos números en PSeInt](./img/pseint_suma_dos_numeros.png)
+
 ### ¿Qué deberías observar?
 
 Si ejecutas este algoritmo en modo **“Paso a paso”** en PSeInt, podrás ver:
@@ -207,6 +215,8 @@ Así, `fact` va guardando el resultado parcial:
 - Después de multiplicar por 3: `fact = 6`
 - Después de multiplicar por 4: `fact = 24`
 - …
+
+![Factorial y variable acumuladora](./img/factorial_acumulador.png)
 
 ---
 
