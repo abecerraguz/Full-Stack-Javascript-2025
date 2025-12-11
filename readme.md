@@ -12,4 +12,4 @@ No necesitas experiencia previa en programación: el contenido está pensado par
 ## Índice
 
 1. MÓDULO I – Fundamentos y pensamiento algorítmico  
-   1. [Herramientas de IA, algoritmos y PSeInt](./MODULO-I/orientacion-al-perfil-y-metodologia-del-curso/04-clase/herramientas-de-IA-algoritmos-y-PSeInt.mdherramientas-de-IA-algoritmos-y-PSeInt.md)
+   1. [Herramientas de IA, algoritmos y PSeInt](./MODULO-I/orientacion-al-perfil-y-metodologia-del-curso/04-clase/herramientas-de-IA-algoritmos-y-PSeInt.md)
