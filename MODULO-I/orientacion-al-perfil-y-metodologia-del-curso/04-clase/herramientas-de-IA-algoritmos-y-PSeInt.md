@@ -112,6 +112,144 @@ Palabras clave importantes:
 
 **PSeInt** es un programa que permite escribir pseudocódigo y **simular** cómo se ejecutaría.
 
+1) Estructura del programa
+
+| Palabra        | Uso    | Significado                                   | Ejemplo                |
+| -------------- | ------ | --------------------------------------------- | ---------------------- |
+| `Proceso`      | Inicio | Define el inicio del programa (forma clásica) | `Proceso MiPrograma`   |
+| `FinProceso`   | Cierre | Termina el programa iniciado con `Proceso`    | `FinProceso`           |
+| `Algoritmo`    | Inicio | Inicio alternativo (según perfil)             | `Algoritmo MiPrograma` |
+| `FinAlgoritmo` | Cierre | Cierre alternativo (según perfil)             | `FinAlgoritmo`         |
+
+2) Variables y tipos de datos
+
+| Palabra     | Uso         | Significado                                  | Ejemplo                       |
+| ----------- | ----------- | -------------------------------------------- | ----------------------------- |
+| `Definir`   | Declaración | Declara variables                            | `Definir edad Como Entero`    |
+| `Como`      | Declaración | Indica el tipo de dato                       | `Definir pi Como Real`        |
+| `Entero`    | Tipo        | Número sin decimales                         | `Definir x Como Entero`       |
+| `Real`      | Tipo        | Número con decimales                         | `Definir nota Como Real`      |
+| `Cadena`    | Tipo        | Texto (string)                               | `Definir nombre Como Cadena`  |
+| `Caracter`  | Tipo        | Texto (en muchos perfiles equivale a cadena) | `Definir letra Como Caracter` |
+| `Logico`    | Tipo        | Booleano                                     | `Definir activo Como Logico`  |
+| `Verdadero` | Constante   | Valor booleano true                          | `activo <- Verdadero`         |
+| `Falso`     | Constante   | Valor booleano false                         | `activo <- Falso`             |
+
+3) Entrada y salida
+
+| Palabra      | Uso     | Significado                           | Ejemplo                        |
+| ------------ | ------- | ------------------------------------- | ------------------------------ |
+| `Leer`       | Entrada | Lee desde teclado a una variable      | `Leer edad`                    |
+| `Escribir`   | Salida  | Muestra texto/valores en pantalla     | `Escribir "Hola"`              |
+| `Imprimir`   | Salida  | Sinónimo de `Escribir` (según perfil) | `Imprimir "Hola"`              |
+| `Sin Saltar` | Salida  | Imprime sin salto de línea            | `Escribir "Edad: " Sin Saltar` |
+
+4) Operadores (lo que “puedes usar”)
+
+| Operador/Palabra | Tipo         | Significado                     | Ejemplo                 |
+| ---------------- | ------------ | ------------------------------- | ----------------------- |
+| `<-`             | Asignación   | Guarda un valor en una variable | `x <- 10`               |
+| `+ - * /`        | Aritméticos  | Suma, resta, multiplica, divide | `r <- a + b`            |
+| `^`              | Aritmético   | Potencia                        | `p <- 2 ^ 3`            |
+| `MOD`            | Aritmético   | Resto de una división           | `r <- 17 MOD 5`         |
+| `=`              | Relacional   | Igual a                         | `Si a = b Entonces`     |
+| `<>`             | Relacional   | Distinto de                     | `Si a <> b Entonces`    |
+| `< <= > >=`      | Relacionales | Comparación                     | `Si x >= 0 Entonces`    |
+| `Y`              | Lógico       | AND                             | `Si a>0 Y b>0 Entonces` |
+| `O`              | Lógico       | OR                              | `Si a=1 O a=2 Entonces` |
+| `NO`             | Lógico       | NOT                             | `Si NO activo Entonces` |
+
+5) Condicionales
+
+| Palabra    | Uso         | Significado             | Ejemplo                |
+| ---------- | ----------- | ----------------------- | ---------------------- |
+| `Si`       | Decisión    | Inicia una condición    | `Si edad>=18 Entonces` |
+| `Entonces` | Bloque      | Abre el bloque del `Si` | `Si x>0 Entonces`      |
+| `Sino`     | Alternativa | Bloque si NO se cumple  | `Sino`                 |
+| `FinSi`    | Cierre      | Cierra el `Si`          | `FinSi`                |
+
+6) Selección múltiple (tipo “switch”)
+
+| Palabra                  | Uso       | Significado                   | Ejemplo              |
+| ------------------------ | --------- | ----------------------------- | -------------------- |
+| `Segun`                  | Selección | Evalúa una variable por casos | `Segun opcion Hacer` |
+| `Hacer`                  | Bloque    | Abre el bloque de casos       | `Segun op Hacer`     |
+| `De Otro Modo`           | Default   | Caso por defecto              | `De Otro Modo:`      |
+| `FinSegun` / `Fin Segun` | Cierre    | Cierra el `Segun`             | `FinSegun`           |
+
+7) Ciclos (repetición)
+
+| Palabra                        | Uso    | Significado                             | Ejemplo                      |
+| ------------------------------ | ------ | --------------------------------------- | ---------------------------- |
+| `Para`                         | Ciclo  | Repite con contador                     | `Para i <- 1 Hasta 10 Hacer` |
+| `Hasta`                        | Ciclo  | Límite del `Para`                       | `Hasta 10`                   |
+| `Con Paso`                     | Ciclo  | Incremento/decremento del `Para`        | `Con Paso 2`                 |
+| `FinPara`                      | Cierre | Cierra el `Para`                        | `FinPara`                    |
+| `Mientras`                     | Ciclo  | Repite mientras condición sea verdadera | `Mientras x>0 Hacer`         |
+| `FinMientras` / `Fin Mientras` | Cierre | Cierra el `Mientras`                    | `FinMientras`                |
+| `Repetir`                      | Ciclo  | Repite al menos una vez                 | `Repetir ... Hasta Que cond` |
+| `Hasta Que`                    | Ciclo  | Condición de salida del `Repetir`       | `Hasta Que op=0`             |
+
+8) Arreglos (vectores y matrices)
+
+| Palabra     | Uso      | Significado                     | Ejemplo                                             |
+| ----------- | -------- | ------------------------------- | --------------------------------------------------- |
+| `Dimension` | Arreglos | Declara tamaño de vector/matriz | `Dimension v[10]` / `Dimension m[3,3]`              |
+| `[]`        | Arreglos | Acceso por índice               | `v[0] <- 99` (depende del perfil si parte en 0 o 1) |
+
+9) Subprocesos y funciones (modularidad)
+
+| Palabra                | Uso        | Significado                                             | Ejemplo                |
+| ---------------------- | ---------- | ------------------------------------------------------- | ---------------------- |
+| `SubProceso`           | Modular    | Crea un bloque reutilizable sin retorno (procedimiento) | `SubProceso Saludar()` |
+| `FinSubProceso`        | Cierre     | Termina un subproceso                                   | `FinSubProceso`        |
+| `Funcion`              | Modular    | Crea un bloque que retorna un valor (según perfil)      | `Funcion Doble(x)`     |
+| `FinFuncion`           | Cierre     | Termina una función                                     | `FinFuncion`           |
+| `Por Valor`            | Parámetros | Pasa copia (no modifica el original)                    | `(x Por Valor)`        |
+| `Por Referencia`       | Parámetros | Permite modificar variable original                     | `(x Por Referencia)`   |
+| `Retornar` / `Retorna` | Retorno    | Devuelve valor desde una función (según perfil)         | `Retornar x*2`         |
+
+10) Utilidades de pantalla y pausas
+
+| Palabra              | Uso   | Significado                       | Ejemplo              |
+| -------------------- | ----- | --------------------------------- | -------------------- |
+| `Borrar Pantalla`    | UI    | Limpia la consola                 | `Borrar Pantalla`    |
+| `Limpiar Pantalla`   | UI    | Sinónimo (según perfil)           | `Limpiar Pantalla`   |
+| `Esperar Tecla`      | Pausa | Detiene hasta presionar una tecla | `Esperar Tecla`      |
+| `Esperar n Segundos` | Pausa | Espera un tiempo                  | `Esperar 2 Segundos` |
+
+11) Funciones numéricas comunes
+
+| Función                    | Uso           | Significado                        | Ejemplo               |
+| -------------------------- | ------------- | ---------------------------------- | --------------------- |
+| `Aleatorio(a,b)`           | Random        | Entero aleatorio entre `a` y `b`   | `n <- Aleatorio(1,3)` |
+| `Azar(n)`                  | Random        | Entero aleatorio entre `0` y `n-1` | `n <- Azar(10)`       |
+| `Abs(x)`                   | Matemática    | Valor absoluto                     | `a <- Abs(-5)`        |
+| `RC(x)` / `Raiz(x)`        | Matemática    | Raíz cuadrada (según perfil)       | `r <- RC(25)`         |
+| `Trunc(x)`                 | Matemática    | Trunca decimales                   | `t <- Trunc(7.9)`     |
+| `Redon(x)`                 | Matemática    | Redondea                           | `r <- Redon(7.5)`     |
+| `Sen(x)` `Cos(x)` `Tan(x)` | Trigonometría | Seno, coseno, tangente             | `s <- Sen(0)`         |
+
+12) Funciones de texto comunes
+
+| Función                 | Uso   | Significado               | Ejemplo                       |
+| ----------------------- | ----- | ------------------------- | ----------------------------- |
+| `Longitud(cad)`         | Texto | Cantidad de caracteres    | `n <- Longitud("Hola")`       |
+| `Mayusculas(cad)`       | Texto | Convierte a mayúsculas    | `m <- Mayusculas(nombre)`     |
+| `Minusculas(cad)`       | Texto | Convierte a minúsculas    | `m <- Minusculas(nombre)`     |
+| `SubCadena(cad,i,f)`    | Texto | Extrae un tramo del texto | `s <- SubCadena("Hola",0,1)`  |
+| `Concatenar(a,b)`       | Texto | Une cadenas               | `c <- Concatenar("Hola","!")` |
+| `ConvertirANumero(cad)` | Texto | Pasa texto a número       | `x <- ConvertirANumero("10")` |
+| `ConvertirATexto(num)`  | Texto | Pasa número a texto       | `t <- ConvertirATexto(10)`    |
+
+13) Comentarios
+
+| Símbolo     | Uso        | Significado                         | Ejemplo                 |
+| ----------- | ---------- | ----------------------------------- | ----------------------- |
+| `//`        | Comentario | Comentario de una línea             | `// Esto no se ejecuta` |
+| `/* ... */` | Comentario | Comentario de bloque (según perfil) | `/* Varias líneas */`   |
+
+
 Con PSeInt puedes:
 
 - Escribir algoritmos en pseudocódigo.
@@ -287,6 +425,11 @@ Esto te ayuda a:
 - Relacionar el pseudocódigo con lo que luego harás en un lenguaje real de programación.
 
 ---
+
+# ¿Cómo identificar si un número es primo?
+Para verificar si un número pequeño (por ejemplo, menos de 100) es primo, puedes dividirlo entre los números menores que él mismo (excluyendo el 1). Si solo es divisible por 1 y por sí mismo, entonces es primo.
+
+
 
 ## 10. IA como apoyo a la programación
 
