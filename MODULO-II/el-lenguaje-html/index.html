@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<!--
+  DOCTYPE indica al navegador que este documento usa el estándar HTML5.
+  Si no está, algunos navegadores pueden entrar en “modo compatibilidad”
+  (puede cambiar la forma en que interpretan el código).
+-->
+<html lang="es">
+  <!--
+    lang="es" ayuda a:
+    - Lectores de pantalla (pronunciación correcta)
+    - Traducción automática
+    - SEO (idioma del contenido)
+  -->
+  <head>
+    <!--
+      <head> contiene información “no visible” que configura cómo el navegador
+      interpreta el documento: metadatos, título, fuentes, CSS, etc.
+    -->
+
+    <meta charset="UTF-8" />
+    <!--
+      Define la codificación de caracteres.
+      UTF-8 soporta tildes, ñ, símbolos, emojis, etc.
+      Es una práctica estándar y evita texto raro (�).
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Muy importante para responsive.
+      - width=device-width: el ancho se adapta al dispositivo.
+      - initial-scale=1.0: zoom inicial normal.
+      Sin esto, en móvil la web suele verse “miniatura”.
+    -->
+
+    <meta
+      name="description"
+      content="Demo didáctico: estructura básica HTML5, etiquetas semánticas y atributos comunes."
+    />
+    <!--
+      description: descripción corta para buscadores (SEO) y previews.
+      No siempre se muestra tal cual, pero es una buena práctica.
+    -->
+
+    <title>Demo HTML5 — Estructura + Semántica</title>
+    <!--
+      <title> aparece en:
+      - Pestaña del navegador
+      - Historial / favoritos
+      - Resultados de búsqueda (a veces)
+    -->
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--
+      <link> conecta recursos externos.
+      En este caso: CSS.
+      (Más adelante, también se usa para íconos, fuentes, etc.)
+    -->
+  </head>
+
+  <body>
+    <!--
+      <body> contiene todo lo VISIBLE en la página.
+      Aquí van textos, imágenes, botones, enlaces, etc.
+    -->
+
+    <!--
+      ✅ Skip link (accesibilidad)
+      Permite que usuarios con teclado/lector de pantalla salten el menú
+      y vayan directo al contenido principal.
+      Es muy común en sitios accesibles.
+    -->
+    <a class="skip-link" href="#contenido-principal">
+      Saltar al contenido principal
+    </a>
+
+    <!--
+      <header> (semántica)
+      Representa el encabezado del sitio o de una sección.
+      Normalmente incluye logo, título del sitio, breve descripción.
+      OJO: <header> NO es lo mismo que <head>.
+    -->
+    <header>
+      <h1>Introducción al Desarrollo Web con HTML</h1>
+      <p>
+        En este demo veremos la estructura base del documento y etiquetas
+        semánticas como header, nav, main, section, aside y footer.
+      </p>
+    </header>
+
+    <!--
+      ✅ ¿Por qué separar <nav> del <header>?
+      Porque:
+      - <header> es “encabezado” (identidad, título, introducción)
+      - <nav> es “navegación” (menús / enlaces principales)
+      A veces van dentro del header (depende del diseño),
+      pero semánticamente es útil distinguirlos.
+    -->
+
+    <!--
+      ✅ <nav> (navegación principal)
+      Define un bloque de enlaces de navegación.
+      El atributo aria-label:
+      - Sirve para describir el propósito del nav a lectores de pantalla
+      - Útil cuando hay más de un nav (ej: nav principal + nav footer)
+    -->
+    <nav aria-label="Navegación principal del sitio">
+      <ul>
+        <!--
+          <ul> lista no ordenada: cuando el orden NO es importante.
+          Cada opción de menú va como <li>.
+        -->
+        <li><a href="#que-es-html" title="Ir a la sección: ¿Qué es HTML?">¿Qué es HTML?</a></li>
+        <li><a href="#estructura" title="Ir a la sección: Estructura base">Estructura base</a></li>
+        <li><a href="#semantica" title="Ir a la sección: HTML semántico">Semántica</a></li>
+        <li><a href="#accesibilidad" title="Ir a la sección: Accesibilidad">Accesibilidad</a></li>
+      </ul>
+    </nav>
+
+    <!--
+      <main> (contenido principal)
+      Representa el contenido PRINCIPAL y ÚNICO de la página.
+      Buenas prácticas:
+      - Idealmente debe existir solo 1 <main> por documento.
+      - No debería repetirse en otras páginas (como menús o footers).
+      - Ayuda muchísimo a accesibilidad: lectores de pantalla saltan directo aquí.
+      Por eso es común darle un id (para el “skip link”).
+    -->
+    <main id="contenido-principal">
+      <!--
+        ✅ <section> (sección temática)
+        Úsala cuando el contenido es un bloque temático.
+        Consejo clave: una section casi siempre debería tener un encabezado (h2/h3...).
+      -->
+      <section id="que-es-html">
+        <h2>¿Qué es HTML?</h2>
+
+        <p>
+          HTML es un <strong>lenguaje de marcado</strong> (no es un lenguaje de programación)
+          que nos permite estructurar el contenido: títulos, párrafos, listas, enlaces, etc.
+        </p>
+
+        <!--
+          Enlaces <a>
+          - href: destino del enlace (URL o #id para navegación interna)
+          - title: texto adicional (apoya a algunos usuarios, pero no reemplaza texto claro)
+          - target="_blank": abre en una nueva pestaña (útil para links externos)
+          - rel="noopener noreferrer": seguridad y rendimiento cuando usamos target="_blank"
+            evita que la pestaña nueva pueda manipular la anterior (tabnabbing).
+        -->
+        <p>
+          Documentación oficial recomendada:
+          <a
+            href="https://developer.mozilla.org/es/docs/Web/HTML"
+            title="Abrir documentación de HTML en MDN (nueva pestaña)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MDN Web Docs: HTML
+          </a>
+        </p>
+
+        <!--
+          ✅ Link interno (a una sección de la misma página)
+          Aquí no usamos target="_blank" porque no tiene sentido abrir otra pestaña para lo mismo.
+        -->
+        <p>
+          Si quieres ver el bloque de accesibilidad, haz clic aquí:
+          <a href="#accesibilidad" title="Ir a la sección de accesibilidad">Accesibilidad</a>
+        </p>
+      </section>
+
+      <section id="estructura">
+        <h2>Estructura base del documento</h2>
+
+        <!--
+          ✅ Lista ordenada <ol>
+          Úsala cuando el orden sí importa (pasos o secuencia).
+        -->
+        <ol>
+          <li>
+            <strong>&lt;html&gt;</strong>:
+            contenedor raíz del documento (todo va dentro).
+          </li>
+          <li>
+            <strong>&lt;head&gt;</strong>:
+            configuración y metadatos (no visible).
+          </li>
+          <li>
+            <strong>&lt;body&gt;</strong>:
+            contenido visible.
+          </li>
+        </ol>
+
+        <p>
+          Regla mental simple:
+          <strong>HEAD = configuración</strong> /
+          <strong>BODY = contenido</strong>.
+        </p>
+      </section>
+
+      <section id="semantica">
+        <h2>HTML5 semántico</h2>
+
+        <!--
+          ✅ <article>
+          Representa una pieza de contenido con sentido propio.
+          Ej: un post de blog, una noticia, una tarjeta de producto con contenido completo.
+          Se puede reutilizar o entender “por sí sola”.
+        -->
+        <article>
+          <h3>¿Por qué usar semántica?</h3>
+          <p>
+            Porque mejora:
+            <strong>accesibilidad</strong> (lectores de pantalla),
+            <strong>SEO</strong> (estructura clara),
+            y <strong>mantenibilidad</strong> (código más ordenado).
+          </p>
+        </article>
+
+        <!--
+          ✅ Ejemplo de contenido complementario dentro del flujo
+          (pero OJO: lo “realmente complementario” suele ir mejor en <aside>)
+        -->
+        <p>
+          Ejemplo: Un <code>&lt;header&gt;</code> describe un encabezado,
+          un <code>&lt;nav&gt;</code> un menú de enlaces,
+          y <code>&lt;footer&gt;</code> el pie del sitio.
+        </p>
+      </section>
+
+      <section id="accesibilidad">
+        <h2>Accesibilidad (ideas básicas)</h2>
+        <p>
+          Accesibilidad significa que la web pueda ser usada por personas con distintas
+          capacidades y también en distintos contextos (teclado, lector de pantalla, etc.).
+        </p>
+
+        <ul>
+          <li>Usar <strong>títulos</strong> en orden (h1, h2, h3...)</li>
+          <li>Usar etiquetas semánticas: <code>main</code>, <code>nav</code>, <code>header</code></li>
+          <li>Agregar <code>aria-label</code> cuando algo necesita “nombre” extra (como un nav)</li>
+        </ul>
+      </section>
+
+      <!-- =========================================================
+     ✅ NUEVO: FORMULARIOS
+     Pega este bloque dentro de <main> ... justo antes del <aside>
+     ========================================================= -->
+<section id="formularios">
+  <h2>Formularios (capturar datos del usuario)</h2>
+
+  <!--
+    <form> representa un formulario.
+    action: a dónde se envían los datos (URL del servidor).
+    method:
+      - GET  => envía datos en la URL (útil para búsquedas)
+      - POST => envía datos en el cuerpo (útil para registros / login)
+    En esta demo usamos # para no enviar a ningún lado.
+  -->
+  <form action="#" method="post" aria-label="Formulario de ejemplo para estudiantes">
+    <!--
+      <fieldset> agrupa campos relacionados.
+      <legend> pone un título a ese grupo (muy útil en accesibilidad).
+    -->
+    <fieldset>
+      <legend>Datos de contacto</legend>
+
+      <!--
+        label + input
+        - for del label debe coincidir con el id del input
+        Esto ayuda a accesibilidad y permite que al hacer click en el label
+        se active el input.
+      -->
+      <div>
+        <label for="nombre">Nombre (requerido)</label>
+        <input
+          id="nombre"
+          name="nombre"
+          type="text"
+          placeholder="Ej: Ana"
+          required
+          minlength="2"
+          title="Escribe tu nombre (mínimo 2 caracteres)"
+        />
+      </div>
+
+      <div>
+        <label for="email">Correo (requerido)</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="ejemplo@correo.com"
+          required
+          title="Escribe un correo válido, por ejemplo: ejemplo@correo.com"
+        />
+      </div>
+
+      <div>
+        <label for="fecha">Fecha de nacimiento</label>
+        <input
+          id="fecha"
+          name="fecha"
+          type="date"
+          title="Selecciona tu fecha de nacimiento"
+        />
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferencias</legend>
+
+      <div>
+        <label for="nivel">Nivel de experiencia</label>
+        <!--
+          <select> permite elegir una opción.
+          - name: clave del dato que se enviará
+          - option value: valor que se enviará al backend
+        -->
+        <select id="nivel" name="nivel" title="Selecciona tu nivel">
+          <option value="">Selecciona una opción</option>
+          <option value="inicio">Inicio</option>
+          <option value="intermedio">Intermedio</option>
+          <option value="avanzado">Avanzado</option>
+        </select>
+      </div>
+
+      <div>
+        <!--
+          checkbox: verdadero/falso.
+          Cuando está marcado, se envía el value.
+        -->
+        <input
+          id="newsletter"
+          name="newsletter"
+          type="checkbox"
+          value="si"
+          title="Marca si deseas recibir novedades"
+        />
+        <label for="newsletter">Quiero recibir novedades (newsletter)</label>
+      </div>
+
+      <div>
+        <label for="mensaje">Mensaje</label>
+        <!--
+          <textarea> para texto más largo.
+          rows: alto visible inicial.
+        -->
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          rows="4"
+          placeholder="Escribe un mensaje corto..."
+          title="Escribe un mensaje"
+        ></textarea>
+      </div>
+    </fieldset>
+
+    <!--
+      type="submit": envía el formulario.
+      type="reset": reinicia los campos (opcional).
+    -->
+    <div>
+      <button type="submit" title="Enviar formulario (demo)">Enviar</button>
+      <button type="reset" title="Limpiar el formulario (demo)">Limpiar</button>
+    </div>
+  </form>
+</section>
+
+<!-- =========================================================
+     ✅ NUEVO: TABLAS
+     ========================================================= -->
+<section id="tablas">
+  <h2>Tablas (organizar datos en filas y columnas)</h2>
+
+  <!--
+    <table> se usa para datos tabulares (no para maquetar diseño).
+    <caption> describe la tabla (accesibilidad).
+    <thead> encabezado, <tbody> cuerpo, <tfoot> pie (opcionales pero recomendados).
+  -->
+  <table class="tabla-demo">
+    <caption>Ejemplo: asistencia de estudiantes (demo)</caption>
+
+    <thead>
+      <tr>
+        <!--
+          <th> = encabezado.
+          scope="col": este encabezado describe una COLUMNA.
+        -->
+        <th scope="col">Estudiante</th>
+        <th scope="col">Clase 1</th>
+        <th scope="col">Clase 2</th>
+        <th scope="col">Clase 3</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <!-- scope="row": este encabezado describe una FILA -->
+        <th scope="row">Ana</th>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+      </tr>
+      <tr>
+        <th scope="row">Diego</th>
+        <td>✅</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <th scope="row">María</th>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th scope="row">Total presentes</th>
+        <td>3</td>
+        <td>2</td>
+        <td>2</td>
+      </tr>
+    </tfoot>
+  </table>
+</section>
+
+<!-- =========================================================
+     ✅ NUEVO: AUDIO + VIDEO
+     ========================================================= -->
+<section id="multimedia">
+  <h2>Multimedia (audio y video)</h2>
+
+  <!--
+    ✅ <audio>
+    controls: muestra controles (play, pausa, volumen).
+    preload:
+      - none / metadata / auto
+      metadata es buena práctica para cargar poco al inicio.
+  -->
+  <figure class="media-demo">
+    <figcaption><strong>Audio de prueba</strong> (demo con controls)</figcaption>
+
+    <audio controls preload="metadata">
+      <!--
+        <source> permite entregar varios formatos.
+        El navegador elegirá el primero que soporte.
+      -->
+      <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
+      Tu navegador no soporta audio HTML5.
+    </audio>
+  </figure>
+
+  <!--
+    <video>
+    controls: muestra controles.
+    width: tamaño sugerido (también puedes controlar por CSS).
+    playsinline: evita pantalla completa automática en algunos móviles (buena práctica).
+  -->
+  <figure class="media-demo">
+    <figcaption><strong>Video de prueba</strong> (demo con controls)</figcaption>
+
+    <video controls preload="metadata" playsinline>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      Tu navegador no soporta video HTML5.
+    </video>
+  </figure>
+</section>
+
+
+      <!--
+        ✅ <aside> (contenido complementario)
+        Se usa para información secundaria:
+        - glosario
+        - links relacionados
+        - publicidad
+        - sidebar
+        No es el contenido principal.
+      -->
+      <aside aria-label="Contenido complementario: glosario rápido">
+        <h2>Glosario rápido</h2>
+
+        <!--
+          ✅ <dl> lista de definiciones (término + definición)
+          <dt> término
+          <dd> definición
+        -->
+        <dl>
+          <dt>Etiqueta</dt>
+          <dd>
+            Elemento como <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code> o <code>&lt;section&gt;</code>.
+          </dd>
+
+          <dt>Atributo</dt>
+          <dd>
+            Información extra dentro de una etiqueta, por ejemplo:
+            <code>href</code>, <code>id</code>, <code>lang</code>, <code>title</code>.
+          </dd>
+        </dl>
+      </aside>
+    </main>
+
+    <!--
+      ✅ <footer> (pie de página)
+      Contiene información final: copyright, enlaces secundarios, contacto, etc.
+    -->
+    <footer>
+      <small>© 2025 — Demo HTML5</small>
+      <span> | </span>
+      <a href="#contenido-principal" title="Volver al contenido principal">Volver arriba</a>
+    </footer>
+  </body>
+</html>

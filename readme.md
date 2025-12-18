@@ -13,3 +13,6 @@ No necesitas experiencia previa en programación: el contenido está pensado par
 
 1. MÓDULO I – Fundamentos y pensamiento algorítmico  
    1. [Herramientas de IA, algoritmos y PSeInt](./MODULO-I/orientacion-al-perfil-y-metodologia-del-curso/04-clase/herramientas-de-IA-algoritmos-y-PSeInt.md)
+   2. [Presentación Sobriedad Digital](https://docs.google.com/presentation/d/1InmJvVTxzuDbbQkXeLLmIb7bVnirt-cp/edit?usp=sharing&ouid=111364373409188823844&rtpof=true&sd=true)
+2. MÓDULO II – Fundamentos de Desarrollo Front End
+   1. [Clase el lenguaje HTML:Explorando Etiquetas y Atributos en HTML](./MODULO-II/el-lenguaje-html/etiquetas-atributos-html.md)
