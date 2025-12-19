@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+  LIVE CODING: SmartLamp (SOLO HTML)
+  Objetivo: entender contenedores y elementos “en línea”:
+  - <div>  : elemento de bloque (sirve para agrupar secciones)
+  - <span> : elemento en línea (sirve para resaltar partes del texto)
+  - class  : “gancho” para estilos CSS (lo veremos más adelante)
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartLamp - Landing (HTML)</title>
+  </head>
+
+  <body>
+    <!--
+      <div> como contenedor principal de la página.
+      Nota: no estamos usando CSS todavía, pero dejamos class para el futuro.
+    -->
+    <div class="wrap">
+
+      <header class="header">
+        <h1>SmartLamp</h1>
+        <p>Luz inteligente para tu hogar: simple, eficiente y configurable.</p>
+      </header>
+
+      <!-- Sección principal con “dos columnas” (en HTML solo la estructuramos) -->
+      <main class="grid">
+        <!-- Columna 1: imagen -->
+        <section class="card" aria-label="Imagen del producto">
+          <!--
+            <img> no tiene etiqueta de cierre.
+            alt: texto alternativo (accesibilidad y SEO).
+          -->
+          <img
+            src="assets/img/pngtree-adjustable-table-lamp-png-image_13223770.png"
+            alt="Imagen de muestra del producto SmartLamp"
+          />
+
+          <p>
+            Tip: puedes reemplazar la URL por una imagen real (copiar “abrir imagen en nueva pestaña”).
+          </p>
+        </section>
+
+        <!-- Columna 2: información -->
+        <section class="card" aria-label="Información del producto">
+          <!-- <span> resalta información dentro de una línea de texto -->
+          <p><span class="badge">Nuevo • 2025</span></p>
+
+          <h2>Ilumina mejor, consume menos.</h2>
+
+          <p>
+            La <span class="highlight">SmartLamp</span> se adapta a tus rutinas:
+            cambia intensidad, color y horarios desde tu celular.
+          </p>
+
+          <h3>Características</h3>
+          <ul>
+            <li><span class="highlight">Ahorro energético</span> con modos eco automáticos.</li>
+            <li><span class="highlight">Control por app</span> (iOS/Android).</li>
+            <li><span class="highlight">Programación</span> de horarios para dormir y despertar.</li>
+          </ul>
+
+          <!--
+            Formulario simple de registro (demo)
+            action="#" evita que se envíe a un servidor real.
+          -->
+          <form class="cta" action="#" method="post">
+            <fieldset>
+              <legend>Regístrate para recibir novedades</legend>
+
+              <!-- label + for debe coincidir con el id del input -->
+              <label for="email">Correo:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tucorreo@ejemplo.com"
+                required
+              />
+
+              <button type="submit">Quiero información</button>
+            </fieldset>
+
+            <p>
+              Nota: más adelante agregaremos CSS para que esto se vea como una “landing” moderna.
+            </p>
+          </form>
+        </section>
+
+      </main>
+
+      <footer class="footer">
+        <p>Demo educativa • SmartLamp</p>
+      </footer>
+      
+    </div>
+  </body>
+</html>

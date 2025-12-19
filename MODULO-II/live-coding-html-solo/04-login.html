@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+  Ejercicio: Formulario Login (SOLO HTML)
+  Objetivo: practicar:
+  - <form>  : contenedor de campos
+  - action  : destino del envío (en demo usamos "#")
+  - method  : GET o POST (en login normalmente POST)
+  - <label> : etiqueta de accesibilidad (for=id)
+  - <input> : campos de entrada (text, password, email, etc.)
+  - required: validación básica del navegador
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login (HTML)</title>
+  </head>
+
+  <body>
+    <main>
+      <h1>Iniciar sesión</h1>
+      <p>
+        Formulario demo usando <code>action="#"</code> (no envía a un servidor real).
+      </p>
+
+      <form action="#" method="post">
+        <fieldset>
+          
+
+          <!-- label + for debe coincidir con el id del input -->
+          <label for="username">Nombre de usuario</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="ej: alumno123"
+            required
+            autocomplete="username"
+          />
+
+          <label for="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="••••••••"
+            required
+            autocomplete="current-password"
+          />
+
+          <!-- Botón que envía el formulario -->
+          <button type="submit">Entrar</button>
+
+          <!--
+            Actividades sugeridas:
+            1) Agregar un checkbox: "Recordarme".
+            2) Agregar un link: "¿Olvidaste tu contraseña?"
+            3) Agregar un input email y comparar text vs email.
+          -->
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>

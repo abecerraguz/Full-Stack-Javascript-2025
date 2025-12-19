@@ -17,14 +17,14 @@
       interpreta el documento: metadatos, título, fuentes, CSS, etc.
     -->
 
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <!--
       Define la codificación de caracteres.
       UTF-8 soporta tildes, ñ, símbolos, emojis, etc.
       Es una práctica estándar y evita texto raro (�).
     -->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--
       Muy importante para responsive.
       - width=device-width: el ancho se adapta al dispositivo.
@@ -35,7 +35,7 @@
     <meta
       name="description"
       content="Demo didáctico: estructura básica HTML5, etiquetas semánticas y atributos comunes."
-    />
+    >
     <!--
       description: descripción corta para buscadores (SEO) y previews.
       No siempre se muestra tal cual, pero es una buena práctica.
@@ -49,12 +49,13 @@
       - Resultados de búsqueda (a veces)
     -->
 
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css">
     <!--
       <link> conecta recursos externos.
       En este caso: CSS.
       (Más adelante, también se usa para íconos, fuentes, etc.)
     -->
+
   </head>
 
   <body>
@@ -80,7 +81,7 @@
       OJO: <header> NO es lo mismo que <head>.
     -->
     <header>
-      <h1>Introducción al Desarrollo Web con HTML</h1>
+      <h1 style="background-color: red;color: green;">Introducción al Desarrollo Web con HTML</h1>
       <p>
         En este demo veremos la estructura base del documento y etiquetas
         semánticas como header, nav, main, section, aside y footer.
@@ -105,14 +106,14 @@
     -->
     <nav aria-label="Navegación principal del sitio">
       <ul>
-        <!--
-          <ul> lista no ordenada: cuando el orden NO es importante.
-          Cada opción de menú va como <li>.
-        -->
-        <li><a href="#que-es-html" title="Ir a la sección: ¿Qué es HTML?">¿Qué es HTML?</a></li>
-        <li><a href="#estructura" title="Ir a la sección: Estructura base">Estructura base</a></li>
-        <li><a href="#semantica" title="Ir a la sección: HTML semántico">Semántica</a></li>
-        <li><a href="#accesibilidad" title="Ir a la sección: Accesibilidad">Accesibilidad</a></li>
+          <!--
+            <ul> lista no ordenada: cuando el orden NO es importante.
+            Cada opción de menú va como <li>.
+          -->
+          <li><a href="#que-es-html" title="Ir a la sección: ¿Qué es HTML?">¿Qué es HTML?</a></li>
+          <li><a href="#estructura" title="Ir a la sección: Estructura base">Estructura base</a></li>
+          <li><a href="#semantica" title="Ir a la sección: HTML semántico">Semántica</a></li>
+          <li><a href="#accesibilidad" title="Ir a la sección: Accesibilidad">Accesibilidad</a></li>
       </ul>
     </nav>
 
@@ -281,7 +282,7 @@
           required
           minlength="2"
           title="Escribe tu nombre (mínimo 2 caracteres)"
-        />
+        >
       </div>
 
       <div>
@@ -293,7 +294,7 @@
           placeholder="ejemplo@correo.com"
           required
           title="Escribe un correo válido, por ejemplo: ejemplo@correo.com"
-        />
+        >
       </div>
 
       <div>
@@ -303,7 +304,7 @@
           name="fecha"
           type="date"
           title="Selecciona tu fecha de nacimiento"
-        />
+        >
       </div>
     </fieldset>
 
@@ -336,7 +337,7 @@
           type="checkbox"
           value="si"
           title="Marca si deseas recibir novedades"
-        />
+        >
         <label for="newsletter">Quiero recibir novedades (newsletter)</label>
       </div>
 
@@ -448,7 +449,7 @@
         <source> permite entregar varios formatos.
         El navegador elegirá el primero que soporte.
       -->
-      <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
+      <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
       Tu navegador no soporta audio HTML5.
     </audio>
   </figure>
@@ -463,7 +464,7 @@
     <figcaption><strong>Video de prueba</strong> (demo con controls)</figcaption>
 
     <video controls preload="metadata" playsinline>
-      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
       Tu navegador no soporta video HTML5.
     </video>
   </figure>
@@ -512,4 +513,5 @@
       <a href="#contenido-principal" title="Volver al contenido principal">Volver arriba</a>
     </footer>
   </body>
+
 </html>

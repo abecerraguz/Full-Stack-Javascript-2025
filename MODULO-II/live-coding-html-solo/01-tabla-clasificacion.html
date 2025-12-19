@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+  LIVE CODING: Tabla de clasificación (SOLO HTML)
+  Objetivo: practicar la estructura de una tabla con:
+  - <table>  : contenedor de la tabla
+  - <caption>: título/descrición de la tabla
+  - <thead>  : encabezado
+  - <tbody>  : filas de datos
+  - <tfoot>  : resumen (opcional)
+  - <tr>     : fila
+  - <th>     : celda de encabezado
+  - <td>     : celda de dato
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla de Clasificación (HTML)</title>
+  </head>
+
+  <body>
+     <main class="container">
+      <h1>Tabla de Clasificación</h1>
+      <p>
+        En esta demo trabajamos únicamente la <strong>estructura HTML</strong> de una tabla.
+        (El diseño con CSS lo veremos más adelante.)
+      </p>
+
+      <!--
+        Recomendación docente:
+        1) Pide al curso que agregue un nuevo equipo (una nueva fila en <tbody>).
+        2) Pide que cambien el orden de posiciones.
+        3) Pide que agreguen una nueva columna (por ejemplo: "DG" diferencia de goles).
+      -->
+      <table>
+        <!-- Describe de qué se trata la tabla (buena práctica) -->
+        <caption>Liga Demo — Fecha 5</caption>
+
+        <!-- Encabezado de la tabla -->
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Equipo</th>
+            <th class="num">PJ</th>
+            <th class="num">PG</th>
+            <th class="num">Puntos</th>
+          </tr>
+        </thead>
+
+        <!-- Cuerpo con los datos -->
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Los Rayos FC</td>
+            <td>5</td>
+            <td>4</td>
+            <td>12</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Azules United</td>
+            <td>5</td>
+            <td>3</td>
+            <td>10</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Verdes City</td>
+            <td>5</td>
+            <td>3</td>
+            <td>9</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Rojos Club</td>
+            <td>5</td>
+            <td>2</td>
+            <td>7</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>Blancos SC</td>
+            <td>5</td>
+            <td>1</td>
+            <td>4</td>
+          </tr>
+        </tbody>
+
+        <!-- Pie de tabla (opcional): puede mostrar totales o notas -->
+        <tfoot>
+          <tr>
+            <!-- colspan une celdas horizontalmente -->
+            <td colspan="4">Total de equipos</td>
+            <td>5</td>
+          </tr>
+        </tfoot>
+      </table>
+    </main>
+  </body>
+</html>

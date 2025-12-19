@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+  Ejercicio: Menú de restaurante (SOLO HTML)
+  Objetivo: practicar navegación con anclas:
+  - <nav> contiene enlaces de navegación
+  - <a href="#id"> navega a un elemento con id="..."
+  - <section id="..."> define el destino de cada ancla
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante - Menú (HTML)</title>
+  </head>
+
+  <body>
+    <header id="top">
+      <h1>Restaurante Demo</h1>
+      <p>
+        Menú con navegación por secciones usando anclas:
+        <code>href="#entradas"</code> → <code>id="entradas"</code>.
+      </p>
+    </header>
+
+    <!--
+      Cada link apunta a un ID dentro de la misma página.
+      Tip docente: pedir que creen una sección nueva y la agreguen al nav.
+    -->
+    <nav aria-label="Menú principal">
+      <a href="#entradas">Entradas</a>
+      <a href="#platos-principales">Platos principales</a>
+      <a href="#postres">Postres</a>
+      <a href="#bebidas">Bebidas</a>
+    </nav>
+
+    <main>
+      <section id="entradas">
+        <h2>Entradas</h2>
+
+        <!-- Lista de platos: cada <li> es un ítem del menú -->
+        <ul>
+          <li>
+            <h3>Bruschetta</h3>
+            <p>Pan tostado, tomate y albahaca.</p>
+            <p><strong>Precio:</strong> $4.990</p>
+          </li>
+
+          <li>
+            <h3>Ensalada fresca</h3>
+            <p>Mix de hojas, palta y semillas.</p>
+            <p><strong>Precio:</strong> $5.490</p>
+          </li>
+
+          <li>
+            <h3>Empanaditas</h3>
+            <p>Queso y champiñón.</p>
+            <p><strong>Precio:</strong> $3.990</p>
+          </li>
+        </ul>
+
+        <p><a href="#top">Volver arriba</a></p>
+      </section>
+
+      <section id="platos-principales">
+        <h2>Platos principales</h2>
+
+        <ul>
+          <li>
+            <h3>Pasta Alfredo</h3>
+            <p>Salsa cremosa + pollo.</p>
+            <p><strong>Precio:</strong> $9.990</p>
+          </li>
+
+          <li>
+            <h3>Hamburguesa</h3>
+            <p>Doble carne + papas.</p>
+            <p><strong>Precio:</strong> $10.990</p>
+          </li>
+
+          <li>
+            <h3>Veggie bowl</h3>
+            <p>Quinoa, verduras y hummus.</p>
+            <p><strong>Precio:</strong> $8.990</p>
+          </li>
+        </ul>
+
+        <p><a href="#top">Volver arriba</a></p>
+      </section>
+
+      <section id="postres">
+        <h2>Postres</h2>
+
+        <ul>
+          <li>
+            <h3>Cheesecake</h3>
+            <p>Frutos rojos.</p>
+            <p><strong>Precio:</strong> $4.990</p>
+          </li>
+
+          <li>
+            <h3>Helado</h3>
+            <p>3 sabores a elección.</p>
+            <p><strong>Precio:</strong> $3.490</p>
+          </li>
+
+          <li>
+            <h3>Brownie</h3>
+            <p>Con nueces + salsa.</p>
+            <p><strong>Precio:</strong> $4.290</p>
+          </li>
+        </ul>
+
+        <p><a href="#top">Volver arriba</a></p>
+      </section>
+
+      <section id="bebidas">
+        <h2>Bebidas</h2>
+
+        <ul>
+          <li>
+            <h3>Limonada</h3>
+            <p>Natural o menta-jengibre.</p>
+            <p><strong>Precio:</strong> $2.490</p>
+          </li>
+
+          <li>
+            <h3>Café</h3>
+            <p>Espresso o americano.</p>
+            <p><strong>Precio:</strong> $1.990</p>
+          </li>
+
+          <li>
+            <h3>Té</h3>
+            <p>Negro, verde o hierbas.</p>
+            <p><strong>Precio:</strong> $1.790</p>
+          </li>
+        </ul>
+
+        <p><a href="#top">Volver arriba</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Tip: agrega el atributo <code>title</code> a los enlaces para mostrar una ayuda al pasar el mouse.</p>
+    </footer>
+
+    <!--
+      Truco:
+      Para que “Volver arriba” funcione perfecto, podemos definir un ancla arriba.
+      En este ejemplo, usamos #top. Para hacerlo real, agrega id="top" al <body> o a un elemento del inicio.
+      Ejemplo: <header id="top"> ... </header>
+    -->
+  </body>
+</html>
