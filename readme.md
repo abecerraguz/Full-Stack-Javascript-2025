@@ -16,4 +16,4 @@ No necesitas experiencia previa en programación: el contenido está pensado par
    2. [Presentación Sobriedad Digital](https://docs.google.com/presentation/d/1InmJvVTxzuDbbQkXeLLmIb7bVnirt-cp/edit?usp=sharing&ouid=111364373409188823844&rtpof=true&sd=true)
 2. MÓDULO II – Fundamentos de Desarrollo Front End
    1. [Clase el lenguaje HTML:Explorando Etiquetas y Atributos en HTML](./MODULO-II/el-lenguaje-html/etiquetas-atributos-html.md)
-   2. [Clase el lenguaje HTML I y II](./MODULO-II/live-coding-html-solo/readme.md)
+   2. [Clase el lenguaje HTML I y II](https://github.com/abecerraguz/Full-Stack-Javascript-2025/tree/main/MODULO-II/live-coding-html-solo)
