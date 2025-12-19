@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SVG simple (vector) para usar como imagen de ejemplo.
+  Ventaja del SVG: pesa poco y se ve nítido en cualquier tamaño.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" role="img" aria-label="Ilustración simple de una lámpara">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#a5b4fc" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#a5b4fc" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="900" height="600" fill="url(#bg)"/>
+  <circle cx="450" cy="240" r="220" fill="url(#glow)"/>
+
+  <!-- Base -->
+  <rect x="360" y="470" width="180" height="26" rx="13" fill="#94a3b8"/>
+  <rect x="390" y="445" width="120" height="30" rx="15" fill="#cbd5e1"/>
+
+  <!-- Columna -->
+  <rect x="438" y="260" width="24" height="190" rx="12" fill="#e5e7eb"/>
+
+  <!-- Brazo -->
+  <rect x="460" y="285" width="200" height="18" rx="9" fill="#e5e7eb"/>
+  <circle cx="460" cy="294" r="14" fill="#cbd5e1"/>
+
+  <!-- Pantalla -->
+  <path d="M660 240c-40 0-72 34-72 76 0 9 1 17 4 25h136c3-8 4-16 4-25 0-42-32-76-72-76z" fill="#fde68a"/>
+  <path d="M598 340h124c-14 38-46 62-62 62s-48-24-62-62z" fill="#fbbf24"/>
+
+  <!-- Texto decorativo -->
+  <text x="42" y="70" fill="#e5e7eb" font-size="30" font-family="Arial, sans-serif" opacity="0.9">SmartLamp</text>
+  <text x="42" y="108" fill="#94a3b8" font-size="18" font-family="Arial, sans-serif" opacity="0.9">Imagen de ejemplo (SVG liviano)</text>
+</svg>

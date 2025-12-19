@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+  DEMO FLEXBOX (para principiantes)
+  Objetivo: entender cómo "ordenar" y "alinear" elementos con Flexbox.
+
+  IDEA CLAVE:
+  - Flexbox se aplica al CONTENEDOR (padre) para ordenar a sus HIJOS (items).
+  - 2 ejes:
+      Eje principal (main axis)  -> depende de flex-direction
+      Eje cruzado (cross axis)   -> perpendicular al principal
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Flexbox (Full Comentado)</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="card">
+      <h1>Flexbox: demo completo (para principiantes)</h1>
+      <p>
+        Flexbox sirve para <strong>ordenar</strong> y <strong>alinear</strong> elementos.
+        Abre DevTools y cambia valores como <code>justify-content</code> o <code>flex-wrap</code>
+        para ver cómo cambia el layout.
+      </p>
+    </header>
+
+    <!-- =========================
+         DEMO 1
+         ========================= -->
+    <section class="card">
+      <h2>Demo 1 — Alineación en contenedor</h2>
+      <p>
+        Contenedor con <code>display:flex</code>, <code>justify-content</code>, <code>align-items</code> y <code>gap</code>.
+      </p>
+
+      <div class="flex-demo-1">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+      </div>
+
+      <p style="margin-top:12px; font-size: 13px; color:#6b7280;">
+        🔧 Prueba en vivo: cambia <code>justify-content</code> a <code>center</code>, <code>flex-end</code>, <code>space-evenly</code>.
+      </p>
+    </section>
+
+    <!-- =========================
+         DEMO 2
+         ========================= -->
+    <section class="card">
+      <h2>Demo 2 — Responsive natural con flex-wrap + flex</h2>
+      <p>
+        Cuando no cabe, los items bajan de línea gracias a <code>flex-wrap: wrap</code>.
+        Cada item usa <code>flex: 1 1 220px</code> para comportarse como “tarjeta responsive”.
+      </p>
+
+      <div class="flex-demo-2">
+        <div class="item">Tarjeta 1</div>
+        <div class="item">Tarjeta 2</div>
+        <div class="item">Tarjeta 3</div>
+        <div class="item">Tarjeta 4</div>
+        <div class="item">Tarjeta 5</div>
+        <div class="item">Tarjeta 6</div>
+      </div>
+
+      <p style="margin-top:12px; font-size: 13px; color:#6b7280;">
+        🔧 Prueba en vivo: cambia el <code>flex-basis</code> (220px) a 180px o 320px y redimensiona la ventana.
+      </p>
+    </section>
+
+    <!-- =========================
+         DEMO 3
+         ========================= -->
+    <section class="card">
+      <h2>Demo 3 — order + align-self (items individuales)</h2>
+      <p>
+        <code>order</code> cambia el orden visual. <code>align-self</code> permite alinear un solo item distinto del resto.
+      </p>
+
+      <div class="flex-demo-3">
+        <div class="item first up">1 (order:2 / align-self:start)</div>
+        <div class="item second">2 (order:3)</div>
+        <div class="item third down">3 (order:1 / align-self:end)</div>
+      </div>
+
+      <p style="margin-top:12px; font-size: 13px; color:#6b7280;">
+        🔧 Prueba en vivo: cambia <code>order</code> y mira cómo cambia sin tocar el HTML.
+      </p>
+    </section>
+  </div>
+</body>
+</html>

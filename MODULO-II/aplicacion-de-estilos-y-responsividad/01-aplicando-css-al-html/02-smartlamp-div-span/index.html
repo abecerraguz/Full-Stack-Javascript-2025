@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+  EJERCICIO 02 — SmartLamp (Landing) (HTML + CSS)
+  Carpeta: 01-aplicando-css-al-html/02-smartlamp-div-span/
+
+  Objetivo:
+  - Reforzar div vs span (estructura + resaltado de texto)
+  - Practicar:
+    - Selectores por clase
+    - Tipografía
+    - Modelo de caja
+    - Flexbox para layout (2 columnas en desktop)
+    - Responsividad con @media
+
+  ✅ Nota: usamos una imagen SVG liviana en assets/img/smartlamp.svg
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartLamp - Landing</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <!--
+      <div> = elemento de bloque (ocupa todo el ancho y hace "salto de línea")
+      Se usa para agrupar secciones grandes.
+    -->
+    <div class="wrap">
+      <header class="header">
+        <h1>SmartLamp</h1>
+        <p>Luz inteligente para tu hogar: simple, eficiente y configurable.</p>
+      </header>
+
+      <!--
+        Layout principal:
+        - En móvil: columna (una cosa debajo de la otra)
+        - En desktop: 2 columnas (imagen + contenido)
+        Lo hacemos con Flexbox en CSS.
+      -->
+      <main class="layout">
+        <!-- Columna 1: imagen -->
+        <section class="card" aria-label="Imagen del producto">
+          <img
+            src="assets/img/smartlamp.svg"
+            alt="Ilustración de ejemplo del producto SmartLamp"
+          />
+
+          <p class="note">
+            Tip docente: cambia el archivo de imagen (SVG/PNG/JPG) y ve cómo se ajusta con CSS
+            usando <code>width: 100%</code> y <code>height: auto</code>.
+          </p>
+        </section>
+
+        <!-- Columna 2: información -->
+        <section class="card" aria-label="Información del producto">
+          <p><span class="badge">Nuevo • 2025</span></p>
+
+          <h2>Ilumina mejor, consume menos.</h2>
+
+          <p>
+            La <span class="highlight">SmartLamp</span> se adapta a tus rutinas:
+            cambia intensidad, color y horarios desde tu celular.
+          </p>
+
+          <h3>Características</h3>
+          <ul>
+            <li><span class="highlight">Ahorro energético</span> con modos eco automáticos.</li>
+            <li><span class="highlight">Control por app</span> (iOS/Android).</li>
+            <li><span class="highlight">Programación</span> de horarios para dormir y despertar.</li>
+          </ul>
+
+          <!-- Formulario simple (demo) -->
+          <form class="cta" action="#" method="post">
+            <fieldset>
+              <legend>Regístrate para recibir novedades</legend>
+
+              <label for="email">Correo:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tucorreo@ejemplo.com"
+                required
+              />
+
+              <button type="submit">Quiero información</button>
+            </fieldset>
+
+            <p class="note">
+              Más adelante puedes mejorar este formulario con:
+              <strong>placeholder</strong>, <strong>focus</strong>, mensajes de error, etc.
+            </p>
+          </form>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Demo educativa • SmartLamp</p>
+      </footer>
+    </div>
+  </body>
+</html>

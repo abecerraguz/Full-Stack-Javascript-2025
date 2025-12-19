@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+  EJERCICIO 04 — Login (HTML + CSS)
+  Carpeta: 01-aplicando-css-al-html/04-login/
+
+  Objetivo:
+  - Estilizar un formulario básico con buenas prácticas:
+    - Labels accesibles (for/id)
+    - Inputs con ancho completo
+    - Estados :focus (cuando haces click / tab)
+    - Botón con :hover
+  - Modelo de caja para construir una "card" centrada.
+  - Responsividad con ancho flexible (min / vw)
+
+  Nota: el formulario usa action="#" solo para demo (no envía a un servidor real).
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <main class="card" aria-label="Formulario de inicio de sesión">
+      <h1>Iniciar sesión</h1>
+      <p>
+        Formulario demo usando <code>action="#"</code>.
+      </p>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Datos de acceso</legend>
+
+          <label for="username">Nombre de usuario</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="ej: alumno123"
+            required
+            autocomplete="username"
+          />
+
+          <label for="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="••••••••"
+            required
+            autocomplete="current-password"
+          />
+
+          <button type="submit">Entrar</button>
+
+          <p class="hint">
+            Actividades sugeridas:
+            <br />1) Agregar un checkbox: "Recordarme".
+            <br />2) Agregar un link: "¿Olvidaste tu contraseña?"
+            <br />3) Cambiar el input username a email y comparar <code>text</code> vs <code>email</code>.
+          </p>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>

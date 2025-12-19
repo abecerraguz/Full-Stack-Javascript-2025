@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--
+  CLASE: Aplicación de estilos y responsividad (Parte I)
+  EJERCICIO 00 — INTRO A CSS (Live Coding guiado)
+
+  Este archivo está pensado para EXPLICAR a estudiantes que:
+  - Ayer solo vieron HTML.
+  - Hoy comienzan con CSS desde cero.
+
+  Objetivos (alineado al PPT):
+  1) Entender qué es CSS y por qué se usa (separar contenido vs diseño).
+  2) Aprender la "estructura" de una regla CSS: selector { propiedad: valor; }
+  3) Ver 3 formas de aplicar CSS: en línea, embebido y archivo externo.
+  4) Conocer el modelo de caja: margin / border / padding / content.
+  5) Practicar tipografía básica: font-family, font-size, font-weight, line-height, text-align.
+  6) Conocer Flexbox para alinear y distribuir elementos.
+  7) Ver un ejemplo MUY simple de responsividad con @media.
+
+  ✅ IMPORTANTE: En este ejercicio usamos CSS en un ARCHIVO EXTERNO (mejor práctica),
+  pero adentro dejamos un ejemplo chiquitito de "estilo en línea" SOLO para mostrar la diferencia.
+
+  Ruta del CSS:
+  ./assets/css/styles.css
+
+  SUGERENCIA PARA EL LIVE CODING (cómo lo dictas):
+  - Paso A: abre index.html en el navegador (sin tocar nada).
+  - Paso B: abre assets/css/styles.css y muestra:
+      1) Reset básico
+      2) Regla por etiqueta (body, h1, p)
+      3) Regla por clase (.card, .badge)
+      4) Regla por ID (#destacado)
+      5) Modelo de caja en .box-demo
+      6) Flexbox en .nav y .cards
+      7) Media query al final (responsivo)
+  - Paso C: mini desafío en clase:
+      1) Cambiar el color de fondo del header.
+      2) Aumentar el padding de .card.
+      3) Cambiar el justify-content del menú.
+      4) Editar el @media para que la "grilla" cambie antes (por ejemplo 700px).
+
+  ------------------------------------------------------------
+  TIP docente (frase simple para explicar CSS):
+  "HTML es la estructura / contenido. CSS es la ropa / estilo."
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>00 - Intro a CSS (Live Coding)</title>
+
+    <!--
+      ✅ Forma recomendada: archivo externo.
+      Ventajas:
+      - Orden: HTML queda limpio.
+      - Reutilización: el mismo CSS sirve para varias páginas.
+      - Mantención: un cambio en CSS puede afectar todo el sitio.
+    -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="wrap">
+        <h1>Intro a CSS</h1>
+        <p class="subtitle">
+          Hoy pasamos de <strong>HTML</strong> a <strong>CSS</strong>: diseño, tipografías, cajas y una pizca de responsividad.
+        </p>
+
+        <!--
+          ⚠️ Ejemplo de estilo en línea (NO recomendado para proyectos reales).
+          Lo usamos para mostrar la idea:
+          - "style" vive dentro del HTML.
+          - Cuesta mantenerlo cuando crece el proyecto.
+
+          Luego comparamos con clases (recomendado).
+        -->
+        <a
+          href="#demo"
+          class="btn"
+          style="border: 2px dashed rgba(255,255,255,0.5);"
+          >Ir a la demo (tiene un borde inline)</a
+        >
+      </div>
+    </header>
+
+    <main class="wrap" id="demo">
+      <!--
+        Tarjetas (cards)
+        Vamos a practicar selectores:
+        - Por etiqueta: p { ... }
+        - Por clase: .card { ... }
+        - Por ID: #destacado { ... }
+      -->
+      <section class="cards" aria-label="Tarjetas de explicación">
+
+        <article class="card">
+          <p class="badge">1) Regla CSS</p>
+          <h2>¿Cómo se escribe CSS?</h2>
+          <p>
+            Una regla CSS tiene esta forma:
+            <code>selector { propiedad: valor; }</code>
+          </p>
+          <p>
+            Ejemplo: <code>p { color: blue; }</code> aplica a <strong>todos</strong> los &lt;p&gt;.
+          </p>
+        </article>
+
+        <article class="card" id="destacado">
+          <p class="badge">2) Selectores</p>
+          <h2>Etiqueta, clase e ID</h2>
+          <ul>
+            <li><strong>Etiqueta</strong>: <code>p</code>, <code>h1</code>, <code>header</code>...</li>
+            <li><strong>Clase</strong>: <code>.card</code> (se puede repetir en muchos elementos)</li>
+            <li><strong>ID</strong>: <code>#destacado</code> (idealmente único en la página)</li>
+          </ul>
+          <p class="note">
+            Este artículo tiene <code>id="destacado"</code> para mostrar estilos más específicos.
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="badge">3) Cascada</p>
+          <h2>¿Por qué se llama “Cascading”?</h2>
+          <p>
+            Porque si dos reglas afectan al mismo elemento,
+            el navegador decide cuál gana según:
+          </p>
+          <ol>
+            <li><strong>Especificidad</strong> (ID &gt; clase &gt; etiqueta)</li>
+            <li><strong>Orden</strong> (la regla que aparece después puede sobreescribir)</li>
+          </ol>
+        </article>
+        
+      </section>
+
+      <!-- Modelo de caja -->
+      <section class="card" aria-label="Modelo de caja">
+        <p class="badge">4) Modelo de caja</p>
+        <h2>Margin, border y padding</h2>
+        <p>
+          Piensa en cada elemento como una caja:
+          <strong>contenido</strong> dentro,
+          luego <strong>padding</strong> (relleno),
+          luego <strong>border</strong> (borde),
+          y por fuera <strong>margin</strong> (espacio externo).
+        </p>
+
+        <div class="box-row">
+          <div class="box-demo">
+            <p><strong>Caja A</strong></p>
+            <p class="small">Tiene margin / border / padding</p>
+          </div>
+
+          <div class="box-demo box-demo--alt">
+            <p><strong>Caja B</strong></p>
+            <p class="small">Mismo concepto, distinto estilo</p>
+          </div>
+        </div>
+
+        <p class="note">
+          En el CSS busca <code>.box-demo</code> para ver dónde está el margen, el borde y el padding.
+        </p>
+      </section>
+
+      <!-- Flexbox + Responsividad -->
+      <section class="card" aria-label="Flexbox y responsividad">
+        <p class="badge">5) Flexbox + @media</p>
+        <h2>Menú simple (Flexbox)</h2>
+
+        <!-- Menú: en CSS lo hacemos flex -->
+        <nav class="nav" aria-label="Navegación de ejemplo">
+          <a href="#">Inicio</a>
+          <a href="#">Cursos</a>
+          <a href="#">Ejercicios</a>
+          <a href="#">Contacto</a>
+        </nav>
+
+        <p>
+          En pantallas grandes, el menú se ve horizontal.
+          En pantallas pequeñas, se apila.
+          Eso lo controlamos con una regla <code>@media</code>.
+        </p>
+
+        <p class="note">
+          Busca en el CSS: <code>.nav { display: flex; ... }</code> y luego la sección <code>@media (...)</code>.
+        </p>
+      </section>
+
+      <footer class="footer">
+        <p>
+          ✅ Listo: ya viste lo esencial para comenzar.
+          Ahora puedes abrir los ejercicios 01–04 en la carpeta <code>01-aplicando-css-al-html</code>.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--
+  EJERCICIO 03 — Menú de restaurante (HTML + CSS)
+  Carpeta: 01-aplicando-css-al-html/03-menu-restaurante/
+
+  Objetivo:
+  - Practicar navegación con anclas:
+      <a href="#entradas"> ... </a>  →  <section id="entradas"> ...
+  - Crear un menú de navegación con Flexbox (PPT: "Menú con Flexbox")
+  - Aplicar estilos a tarjetas de productos
+  - Hacerlo responsivo (1 columna en móvil, 3 en desktop)
+
+  ✅ Nota: usaremos imágenes SVG livianas en assets/img/
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante - Menú</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <header id="top" class="site-header">
+      <h1>Restaurante Demo</h1>
+      <p>
+        Menú con navegación por secciones usando anclas:
+        <code>href="#entradas"</code> → <code>id="entradas"</code>.
+      </p>
+    </header>
+
+    <!--
+      Navegación (Flexbox):
+      - en CSS, el <nav> será display:flex;
+      - los links se verán como "chips" y se acomodarán con flex-wrap.
+    -->
+    <nav class="nav" aria-label="Menú principal">
+      <a href="#entradas">Entradas</a>
+      <a href="#platos-principales">Platos principales</a>
+      <a href="#postres">Postres</a>
+      <a href="#bebidas">Bebidas</a>
+    </nav>
+
+    <main class="wrap">
+      <!-- ENTRADAS -->
+      <section id="entradas" class="section">
+        <div class="section-head">
+          <h2>Entradas</h2>
+          <a class="back" href="#top">Volver arriba</a>
+        </div>
+
+        <div class="items">
+          <article class="item">
+            <img src="assets/img/bruschetta.svg" alt="Bruschetta" />
+            <div class="content">
+              <h3>Bruschetta</h3>
+              <p>Pan tostado, tomate y albahaca.</p>
+              <p class="price">$4.990</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img src="assets/img/ensalada.svg" alt="Ensalada fresca" />
+            <div class="content">
+              <h3>Ensalada fresca</h3>
+              <p>Mix de hojas, palta y semillas.</p>
+              <p class="price">$5.490</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img src="assets/img/empanaditas.svg" alt="Empanaditas" />
+            <div class="content">
+              <h3>Empanaditas</h3>
+              <p>Queso y champiñón.</p>
+              <p class="price">$3.990</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PLATOS PRINCIPALES -->
+      <section id="platos-principales" class="section">
+        <div class="section-head">
+          <h2>Platos principales</h2>
+          <a class="back" href="#top">Volver arriba</a>
+        </div>
+
+        <div class="items">
+          <article class="item">
+            <img src="assets/img/pasta.svg" alt="Pasta Alfredo" />
+            <div class="content">
+              <h3>Pasta Alfredo</h3>
+              <p>Salsa cremosa + pollo.</p>
+              <p class="price">$9.990</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img src="assets/img/burger.svg" alt="Hamburguesa" />
+            <div class="content">
+              <h3>Hamburguesa</h3>
+              <p>Doble carne + papas.</p>
+              <p class="price">$10.990</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img src="assets/img/bowl.svg" alt="Veggie bowl" />
+            <div class="content">
+              <h3>Veggie bowl</h3>
+              <p>Quinoa, verduras y hummus.</p>
+              <p class="price">$8.990</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- POSTRES -->
+      <section id="postres" class="section">
+        <div class="section-head">
+          <h2>Postres</h2>
+          <a class="back" href="#top">Volver arriba</a>
+        </div>
+
+        <div class="items">
+          <article class="item">
+            <img src="assets/img/cheesecake.svg" alt="Cheesecake" />
+            <div class="content">
+              <h3>Cheesecake</h3>
+              <p>Frutos rojos.</p>
+              <p class="price">$4.990</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img src="assets/img/helado.svg" alt="Helado" />
+            <div class="content">
+              <h3>Helado</h3>
+              <p>3 sabores a elección.</p>
+              <p class="price">$3.490</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img src="assets/img/brownie.svg" alt="Brownie" />
+            <div class="content">
+              <h3>Brownie</h3>
+              <p>Con nueces + salsa.</p>
+              <p class="price">$4.290</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- BEBIDAS -->
+      <section id="bebidas" class="section">
+        <div class="section-head">
+          <h2>Bebidas</h2>
+          <a class="back" href="#top">Volver arriba</a>
+        </div>
+
+        <div class="items">
+          <article class="item">
+            <img src="assets/img/limonada.svg" alt="Limonada" />
+            <div class="content">
+              <h3>Limonada</h3>
+              <p>Natural o menta-jengibre.</p>
+              <p class="price">$2.490</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img src="assets/img/cafe.svg" alt="Café" />
+            <div class="content">
+              <h3>Café</h3>
+              <p>Espresso o americano.</p>
+              <p class="price">$1.990</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img src="assets/img/te.svg" alt="Té" />
+            <div class="content">
+              <h3>Té</h3>
+              <p>Negro, verde o hierbas.</p>
+              <p class="price">$1.790</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Tip: agrega <code>title</code> a los enlaces (ej: <code>&lt;a title="Ir a postres"&gt;</code>)
+          para mostrar una ayuda al pasar el mouse.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

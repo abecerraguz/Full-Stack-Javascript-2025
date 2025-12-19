@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+  EJERCICIO 01 — Tabla de clasificación (HTML + CSS)
+  Carpeta: 01-aplicando-css-al-html/01-tabla-clasificacion/
+
+  Objetivo:
+  - Aplicar estilos BÁSICOS a una tabla usando un archivo CSS externo.
+  - Practicar selectores:
+    - Por etiqueta: table, th, td
+    - Por clase: .container, .num
+    - Pseudoclases: :hover y :nth-child()
+
+  ✅ Lo más importante para estudiantes:
+  - El HTML es la estructura (table, thead, tbody...).
+  - El CSS cambia cómo se VE (colores, bordes, spacing, tipografía).
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla de Clasificación</title>
+
+    <!-- ✅ Archivo externo CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Tabla de Clasificación</h1>
+      <p>
+        En esta demo vemos cómo el CSS ayuda a que una tabla sea más legible:
+        bordes limpios, filas alternadas, hover y alineación de números.
+      </p>
+
+      <!-- Tabla -->
+      <table>
+        <caption>Liga Demo — Fecha 5</caption>
+
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Equipo</th>
+            <th class="num">PJ</th>
+            <th class="num">PG</th>
+            <th class="num">Puntos</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Los Rayos FC</td>
+            <td class="num">5</td>
+            <td class="num">4</td>
+            <td class="num">12</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Azules United</td>
+            <td class="num">5</td>
+            <td class="num">3</td>
+            <td class="num">10</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Verdes City</td>
+            <td class="num">5</td>
+            <td class="num">3</td>
+            <td class="num">9</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Rojos Club</td>
+            <td class="num">5</td>
+            <td class="num">2</td>
+            <td class="num">7</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>Blancos SC</td>
+            <td class="num">5</td>
+            <td class="num">1</td>
+            <td class="num">4</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td colspan="4">Total de equipos</td>
+            <td class="num">5</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <!-- Actividades sugeridas (para clase) -->
+      <!--
+        1) Agrega una columna nueva: "DG" (diferencia de goles).
+        2) Pinta al líder de la tabla con una clase: class="leader".
+        3) Cambia el color del header de la tabla en CSS.
+      -->
+    </main>
+  </body>
+</html>
