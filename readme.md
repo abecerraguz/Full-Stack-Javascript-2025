@@ -17,3 +17,4 @@ No necesitas experiencia previa en programación: el contenido está pensado par
 2. MÓDULO II – Fundamentos de Desarrollo Front End
    1. [Clase el lenguaje HTML:Explorando Etiquetas y Atributos en HTML](./MODULO-II/el-lenguaje-html/etiquetas-atributos-html.md)
    2. [Clase el lenguaje HTML I y II](https://github.com/abecerraguz/Full-Stack-Javascript-2025/tree/main/MODULO-II/live-coding-html-solo)
+   3. [Clase Aplicación de estilos y responsividad I y II](https://github.com/abecerraguz/Full-Stack-Javascript-2025/tree/main/MODULO-II/aplicacion-de-estilos-y-responsividad)
