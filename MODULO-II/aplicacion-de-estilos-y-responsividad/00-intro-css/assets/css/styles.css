@@ -1,0 +1,302 @@
+/*
+  00 — INTRO A CSS (assets/css/styles.css)
+
+  ⚠️ Este archivo tiene MUCHOS comentarios porque está hecho para enseñar.
+
+  RECUERDA: CSS se escribe como:
+  selector {
+    propiedad: valor;
+  }
+
+  ---------------------------------------------------------
+  1) Reset y configuración base
+  ---------------------------------------------------------
+*/
+
+/* Buena práctica: box-sizing para que padding + border no "rompan" el ancho */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilos generales para toda la página */
+body {
+  margin: 0;              /* quitamos margen por defecto del navegador */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;       /* altura de línea: mejora legibilidad */
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+/* Un contenedor para que el contenido no quede pegado a los bordes */
+.wrap {
+  /*
+  
+  min() no “adivina” si estás en móvil o en desktop.
+  Lo único que hace es esto: calcula los dos valores en ese momento y se queda con el más pequeño.
+  2) ¿Qué hace min(1100px, 92vw)?
+  EJEMPLO
+  En cada tamaño de pantalla, el navegador calcula:
+
+    1100px (siempre es 1100, fijo)
+    92vw (depende del ancho de pantalla)
+
+L uego toma el menor.
+
+  */
+  width: min(1100px, 92vw);  /* "min" limita el ancho máximo y adapta al viewport */
+  margin: 0 auto;            /* centra horizontalmente */
+}
+
+/*
+  ---------------------------------------------------------
+  2) Tipografía básica (PPT: font-family / font-size / font-weight / line-height)
+  ---------------------------------------------------------
+*/
+
+h1, h2 {
+  line-height: 1.2;     /* títulos con menor interlineado */
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 32px;      /* tamaño del texto */
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+p {
+  margin: 0 0 10px;
+  color: #cbd5e1;
+}
+
+.subtitle {
+  margin-bottom: 14px;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.95em;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+/*
+  ---------------------------------------------------------
+  3) Header (modelo de caja: padding y border)
+  ---------------------------------------------------------
+*/
+
+.site-header {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 24px 0; /* padding = relleno interno */
+}
+
+.btn {
+  display: inline-block;        /* para poder aplicar padding bien */
+  text-decoration: none;
+  color: #111827;
+  background: #a5b4fc;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/*
+  ---------------------------------------------------------
+  4) Tarjetas (cards) + selectores por clase
+  ---------------------------------------------------------
+*/
+
+.cards {
+  /* Flexbox: 1 columna en móvil, se adapta con wrap */
+  display: flex;
+  flex-wrap: wrap;        /* permite que bajen a otra línea */
+  gap: 14px;              /* espacio entre tarjetas */
+  padding: 18px 0;
+}
+
+.card {
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 16px;
+
+  /* Modelo de caja */
+  padding: 16px;          /* relleno interno */
+  margin: 0;              /* no necesitamos margen extra */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
+
+  /* Tamaño flexible: base 320px pero puede crecer 
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 320px;
+
+      1) flex-grow: 1
+      En ingles significa crecer, aumentar
+      Puede crecer si sobra espacio en la fila.
+      Si hay espacio “extra”, el elemento se agranda.
+      El 1 es una “proporción”.
+      Si todos los items tienen grow: 1, crecen por igual.
+
+      2) flex-shrink: 1
+      En Ingles Encogerse/Reducirse
+      Puede achicarse si falta espacio.
+      Si la pantalla es más pequeña y no caben, el elemento reduce su tamaño.
+      1 significa “sí, achícate si es necesario”.
+      Si fuera 0, sería “no te achiques” (y eso puede provocar overflow/scroll horizontal).
+
+      3) flex-basis: 320px
+      En ingles es Base
+      Es el tamaño base ideal antes de crecer o achicarse.
+      Piensa: “quiero que mida alrededor de 320px si se puede”.
+      Luego grow y shrink deciden si se ajusta.
+
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 320px;
+  
+  */
+  flex: 1 1 320px;
+
+}
+
+/* Selector por ID (más específico que clase) */
+#destacado {
+  border-color: rgba(99, 102, 241, 0.55);
+  background: rgba(99, 102, 241, 0.10);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  color: #c7d2fe;
+  border: 1px solid rgba(99, 102, 241, 0.45);
+  background: rgba(99, 102, 241, 0.20);
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin: 0 0 10px;
+}
+
+.note {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/*
+  ---------------------------------------------------------
+  5) Modelo de caja (margin / border / padding)
+  ---------------------------------------------------------
+*/
+
+.box-row {
+  display: flex;
+  /* 
+    flex-wrap: nowrap; /* valor por defecto
+    flex-wrap controla si los elementos (items) dentro de un contenedor flex
+    pueden “bajar” a otra línea cuando ya no caben en una sola fila.
+  */
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px; /* margin = espacio externo (fuera del elemento) */
+}
+
+.box-demo {
+  /* content */
+  background: rgba(16, 185, 129, 0.12);
+
+  /* padding = espacio entre el contenido y el borde */
+  padding: 14px;
+
+  /* border = borde del elemento */
+  border: 2px solid rgba(16, 185, 129, 0.35);
+
+  /* margin = espacio fuera del borde */
+  margin: 6px 0;
+
+  border-radius: 14px;
+  flex: 1 1 260px;
+}
+
+.box-demo--alt {
+  background: rgba(251, 191, 36, 0.12);
+  border-color: rgba(251, 191, 36, 0.35);
+}
+
+.small {
+  font-size: 13px;
+}
+
+/*
+  ---------------------------------------------------------
+  6) Flexbox: menú
+  ---------------------------------------------------------
+*/
+
+.nav {
+  /* Convertimos el contenedor en "flex container" */
+  display: flex;
+
+  /* gap separa los items sin necesidad de margin en cada link */
+  gap: 10px;
+
+  /* en pantallas grandes: horizontal */
+  flex-direction: row;
+
+  /* si no cabe, que baje a otra línea */
+  flex-wrap: wrap;
+
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav a {
+  text-decoration: none;
+  color: #e5e7eb;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+
+/* Hover = feedback visual cuando pasas el mouse */
+.nav a:hover {
+  background: rgba(99, 102, 241, 0.20);
+  border-color: rgba(99, 102, 241, 0.45);
+}
+
+/*
+  ---------------------------------------------------------
+  7) Responsividad (media query)
+  ---------------------------------------------------------
+
+  @media significa:
+  "Si se cumple esta condición, aplica estos estilos".
+
+  Aquí decimos:
+  - Si la pantalla es chica (max-width: 520px)
+  - Cambiamos el menú a columna (vertical)
+*/
+
+@media (max-width: 520px) {
+  .nav {
+    flex-direction: column; /* menú apilado */
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.footer {
+  padding: 16px 0 40px;
+  color: #94a3b8;
+}
